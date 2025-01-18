@@ -27,14 +27,12 @@ const sendErrorProd = (error, res) => {
   }
 
   return res.status(500).json({
-    status: 'error',
-    message: 'Something went very wrong'
-  })
+    status: "error",
+    message: "Something went very wrong",
+  });
 };
 
 const gobalErrorHandler = (err, req, res, next) => {
-
-    
   if (process.env.NODE_ENV === "development") {
     return sendErrorDev(err, res);
   }
